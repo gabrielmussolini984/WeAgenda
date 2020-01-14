@@ -15,25 +15,41 @@ class Login {
     this.errors = [];
     this.user = null;
   }
+  async entrar(){
+    this.valida(); // Chamando a validação.
+    if (this.errors.length > 0) return;
+    // Buscando EMail semelhante
+    this.user = await LoginModel.findOne({email: this.body.email});
+    // Verificando se Existe
+    if (!this.user){
+      this.errors.push('Usuario ou Senha Invalidos');
+      return;
+    } 
+    //Validando Senha
+    if(!bcryptjs.compareSync(this.body.password,this.user.password)){
+      this.errors.push('Usuario ou Senha Invalidos');
+      this.user = null;
+      return;
+    }
+
+
+  }
   // Verificações para a inserção.
   async register(){
     this.valida(); // Chamando a validação.
     if (this.errors.length > 0) return; 
-    
-    
-    await this.existeUsuario();     // Verificando se ja existe registro.
+  
+    await this.existeUsuario(); // Verificando se ja existe registro.
     if (this.errors.length > 0) return;
     
     // Tornando a senha em hash
     const salt = bcryptjs.genSaltSync();
     this.body.password  = bcryptjs.hashSync(this.body.password, salt);
-    try {
-      // Gravando no banco
-      this.user = await LoginModel.create(this.body);  
-    } catch (error) {
-      console.log(error);
-    }
+
+    // Gravando no banco
+    this.user = await LoginModel.create(this.body);  
   }
+  // Validação Function
   valida(){
     this.cleanUp()
     // Email ser valido
@@ -41,6 +57,7 @@ class Login {
     // A senha deve ter 6 a 20
     if (this.body.password.length < 6 || this.body.password.length > 20) this.errors.push('A senha precisa ter entre 6 e 20 caracteres');
   }
+  // Verifica Corpo String Function
   cleanUp(){
     // Tendo a certeza que todo corpo é uma string.
     for (const key in this.body) {
@@ -54,12 +71,14 @@ class Login {
       password: this.body.password
     };
   }
+  // Existe Usuaro Function
   async existeUsuario(){
-    const user = await LoginModel.findOne({email: this.body.email});
-    if (user){
+    this.user = await LoginModel.findOne({email: this.body.email});
+    if (this.user){
       this.errors.push('Email ja cadastrado em nossa base de dados!');
     }
   }
+
 }
 
 module.exports = Login;
