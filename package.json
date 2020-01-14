@@ -25,6 +25,7 @@
     "helmet": "^3.21.2",
     "mongoose": "^5.7.7",
     "regenerator-runtime": "^0.13.3",
+    "serialize-javascript": "^2.1.2",
     "style-loader": "^1.0.0",
     "validator": "^12.1.0"
   },
