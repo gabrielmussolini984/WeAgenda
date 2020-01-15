@@ -61,8 +61,30 @@ Contato.prototype.cleanUp = function(){
 // Métodos Estásticos
 Contato.buscaPorId = async function(id) {
   if (typeof id !== 'string') return;
-  const user = await ContatoModel.findById(id);
-  return user._doc;
+  const contato = await ContatoModel.findById(id);
+  return contato._doc;
+}
+Contato.buscaContatos = async function(){
+  const contatos = await ContatoModel.find()
+    .sort({criadoEm: -1});
+
+  let a = [];
+  contatos.map(item=>{
+    a.push({
+      nome: item.nome,
+      sobrenome: item.sobrenome,
+      email: item.email,
+      telefone: item.telefone,
+      _id: item._id
+    })
+  });
+  return a;
+}
+Contato.delete = async function(id){
+  if (typeof id !== 'string') return; 
+  const contato = await ContatoModel.findOneAndDelete({_id:id});
+  return contato;
+
 }
 // Export
-module.exports = {Contato};
+module.exports = Contato;

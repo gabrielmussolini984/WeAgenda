@@ -1,4 +1,4 @@
-const {Contato} = require('../models/ContatoModel');
+const Contato = require('../models/ContatoModel');
 
 exports.index = (req, res) => {
   res.render('contato',{contato: ''})
@@ -14,7 +14,7 @@ exports.register = async (req, res) => {
       return;
     }
     req.flash('success', 'Contato cadastrado com sucesso!');
-    req.session.save(()=> res.redirect(`/contato/index/${contato.contato.id}`));
+    req.session.save(()=> res.redirect('back'));
     return;  
   } catch (error) {
     console.log(error);
@@ -48,4 +48,10 @@ exports.edit = async(req,res)=>{
     return;
   }
 }
-
+exports.delete = async(req,res)=>{
+  if (!req.params.id) return res.render('404');
+  const contato = await Contato.delete(req.params.id);
+  if (!contato) return res.render('404');
+  req.flash('success', 'Contato Apagado com sucesso!');
+  req.session.save(()=> res.redirect('back'));
+}
