@@ -1,0 +1,28 @@
+<div class="jumbotron jumbotron-fluid text-center">
+  <div class="container mt-n4">
+    <h1 class="display-3">Novo Contato</h1>
+    <p class="lead">Preenche o formulário para criar um novo contato.</p>
+    {{>_messages}}
+
+    {{#if contato.nome}}
+    <form action="/contato/edit/{{contato._id}}" method="POST">
+    {{else}}
+    <form action="/contato/register" method="POST">
+    {{/if}}
+      <input type="hidden" name="_csrf" value="{{csrfToken}}">
+      <div class="form-group">
+        <input type="text" class="form-control" name="nome" value="{{contato.nome}}" placeholder="Digite o Nome">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="sobrenome" value="{{contato.sobrenome}}"placeholder="Digite o Sobrenome">
+      </div> 
+      <div class="form-group">
+        <input type="email" class="form-control" name="email" value="{{contato.email}}"placeholder="Digite um Emal">
+      </div>
+      <div class="form-group">
+        <input type="tel" class="form-control" name="telefone" value="{{contato.telefone}}"placeholder="Digite um Telefone">
+      </div>
+      <button type="submit" class="btn btn-info btn-lg btn-block">Salvar</button>
+    </form>
+  </div>
+</div>
