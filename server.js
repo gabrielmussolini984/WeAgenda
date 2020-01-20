@@ -47,8 +47,9 @@ app.use(checkCsrfError);
 app.use(csrfMiddleware);
 app.use(routes);
 
+const port = process.env.PORT;
 app.on('pronto', () => {
-  app.listen(3001, () => {
+  app.listen(port, () => {
     console.log('Acessar http://localhost:3001');
     console.log('Servidor executando na porta 3001');
   });
