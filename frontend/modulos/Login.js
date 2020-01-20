@@ -10,7 +10,6 @@ export default class Login {
     if (!this.form) return;
     this.form.addEventListener('submit', e =>{
       e.preventDefault();
-      alert('form n enviado')
       this.validate(e);
     })
   }
