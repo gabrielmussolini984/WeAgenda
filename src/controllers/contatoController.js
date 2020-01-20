@@ -29,7 +29,6 @@ exports.editIndex = async (req,res)=>{
   res.render('contato',{contato});
 }
 exports.edit = async(req,res)=>{
-  console.log(req.body)
   const contato = new Contato(req.body);
   try {   
     if (!req.params.id) return res.render('404');

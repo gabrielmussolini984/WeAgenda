@@ -31,21 +31,16 @@ class Login {
       this.user = null;
       return;
     }
-
-
   }
   // Verificações para a inserção.
   async register(){
     this.valida(); // Chamando a validação.
     if (this.errors.length > 0) return; 
-  
     await this.existeUsuario(); // Verificando se ja existe registro.
     if (this.errors.length > 0) return;
-    
     // Tornando a senha em hash
     const salt = bcryptjs.genSaltSync();
     this.body.password  = bcryptjs.hashSync(this.body.password, salt);
-
     // Gravando no banco
     this.user = await LoginModel.create(this.body);  
   }
@@ -78,7 +73,6 @@ class Login {
       this.errors.push('Email ja cadastrado em nossa base de dados!');
     }
   }
-
 }
 
 module.exports = Login;
