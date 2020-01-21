@@ -10,7 +10,7 @@ Uma agenda que contém um formulário para cadastro e login de usuários, com ro
 alguns meios de segurança como helmet, csrv e dotenv, validação de submição dos formularios tanto no front end,
 quanto no backend, tudo feito em full MVC com a template engine Handlebars.
 
-![](./header.jpg)
+![](./header.png)
 
 
 ## Exemplo de uso
