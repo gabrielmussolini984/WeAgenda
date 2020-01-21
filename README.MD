@@ -1,9 +1,9 @@
 # We Agenda
 > Uma aplicação com inserção, edição e remoção de dados. Com um deploy real.
 
-[![handlebars][handlebars]]
-[![webpack][webpack]]
-[![mongoose][mongoose]]
+[![Express Handlebars][handlebars]][handlebars-url]
+[![WebPack Version][webpack]][webpack-url]
+[![Mongoose Version][mongoose]][mongoose-url]
 
 
 Uma agenda que contém um formulário para cadastro e login de usuários, com rotas autenticadas, crud com um banco de dados nosql(mongoDB),
@@ -45,8 +45,11 @@ Gabriel Mussolini – gabrielmussolini@hotmail.com
 
 
 [handlebars]: https://img.shields.io/badge/-Handlebars-orange
+[handlebars-url]: https://handlebarsjs.com/
 [mongoose]: https://img.shields.io/badge/-mongoose-green
+[mongoose-url]: https://mongoosejs.com/
 [webpack]: https://img.shields.io/badge/-webpack-blue
+[webpack-url]: https://webpack.js.org/
 
 [app]: http://34.95.201.84/
 
