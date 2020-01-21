@@ -7,7 +7,7 @@
 
 
 Uma agenda que contém um formulário para cadastro e login de usuários, com rotas autenticadas, crud com um banco de dados nosql(mongoDB),
-alguns meios de segurança como helmet, csrv e dotenv para variaveis de ambiente, verificação de submição dos formularios tanto no front end,
+alguns meios de segurança como helmet, csrv e dotenv, validação de submição dos formularios tanto no front end,
 quanto no backend, tudo feito em full MVC com a template engine Handlebars.
 
 ![](./header.jpeg)
