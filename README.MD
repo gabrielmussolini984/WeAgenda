@@ -14,7 +14,7 @@ quanto no backend, tudo feito em full MVC com a template engine Handlebars.
 
 
 ## Exemplo de uso
-_Foi feito um deploy no Google Cloud, e pode ser acessad pelo link a segior:  [App][app]._ 
+_Foi feito um deploy no Google Cloud, e pode ser acessado pelo link a segior:  [App][app]._ 
 
 ## Configuração para Desenvolvimento
 
