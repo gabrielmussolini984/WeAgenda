@@ -10,11 +10,11 @@ Uma agenda que contém um formulário para cadastro e login de usuários, com ro
 alguns meios de segurança como helmet, csrv e dotenv, validação de submição dos formularios tanto no front end,
 quanto no backend, tudo feito em full MVC com a template engine Handlebars.
 
-![](./header.jpeg)
+![](./header.jpg)
 
 
 ## Exemplo de uso
-_Foi feito um deploy no Google Cloud, e pode ser acessado pelo link a segior:  [App][app]._ 
+_Foi feito um deploy no Google Cloud, e pode ser acessado pelo link a seguir:  [App][app]._ 
 
 ## Configuração para Desenvolvimento
 
