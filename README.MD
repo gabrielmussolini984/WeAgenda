@@ -1,9 +1,10 @@
 # We Agenda
 > Uma aplicação com inserção, edição e remoção de dados. Com um deploy real.
 
-[handlebars][handlebars]
-[mongoose][mongoose]
-[webpack][webpack]
+[![handlebars][handlebars]]
+[![webpack][webpack]]
+[![mongoose][mongoose]]
+
 
 Uma agenda que contém um formulário para cadastro e login de usuários, com rotas autenticadas, crud com um banco de dados nosql(mongoDB),
 alguns meios de segurança como helmet, csrv e dotenv para variaveis de ambiente, verificação de submição dos formularios tanto no front end,
