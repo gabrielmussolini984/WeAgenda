@@ -7,7 +7,7 @@
 
 
 Uma agenda que contém um formulário para cadastro e login de usuários, com rotas autenticadas, crud com um banco de dados nosql(mongoDB),
-alguns meios de segurança como helmet, csrv e dotenv, validação de submição dos formularios tanto no front end,
+alguns meios de segurança como helmet, csrv e dotenv, validação de submição dos formularios tanto no frontend,
 quanto no backend, tudo feito em full MVC com a template engine Handlebars.
 
 ![](header.PNG)
@@ -51,7 +51,7 @@ Gabriel Mussolini – gabrielmussolini@hotmail.com
 [webpack]: https://img.shields.io/badge/-webpack-blue
 [webpack-url]: https://webpack.js.org/
 
-[app]: http://34.95.201.84/
+[app]: https://agenda.gabrielmussolini.com.br/
 
 
 
