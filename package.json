@@ -27,7 +27,7 @@
     "regenerator-runtime": "^0.13.3",
     "serialize-javascript": "^2.1.2",
     "style-loader": "^1.0.0",
-    "validator": "^12.1.0"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "nodemon": "^1.19.4",
